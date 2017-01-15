@@ -1,0 +1,39 @@
+.header {
+    margin: auto;
+    max-width: 900px;
+}
+
+.header-row {
+    display: flex;
+    line-height: 24px;
+    white-space: nowrap;
+    margin: 20px 0;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.header-row > span {
+    padding: 0 30px;
+}
+
+.table {
+    margin: auto;
+    max-width: 400px;
+}
+
+.table-row {
+    display: flex;
+    line-height: 24px;
+    white-space: nowrap;
+    margin: 10px 0;
+    padding: 10px;
+    background: #ffffff;
+    border: 1px solid #e3e3e3;
+    text-align: center;
+}
+
+.table-row > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 5px;
+}
