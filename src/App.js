@@ -39,20 +39,38 @@ const Header =
     </div>
   </div>;
 
-function fetchProjects() {
-  const result = fetch('http://172.17.0.2:8000/projects').then(response => response.json())
-  console.log(result)
-  return result
-}
-
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      projects: [],
+    };
+
+    this.setProjects = this.setProjects.bind(this);
+    this.fetchProjects = this.fetchProjects.bind(this);
+  }
+
+  setProjects(projects) {
+    this.setState({projects});
+  }
+
+  fetchProjects() {
+    const iterator = fetch('http://projects.jakegillespie.me/projects');
+    iterator.then(response => response.json()).then(data => this.setProjects(data));
+  }
+
+  componentDidMount() {
+    this.fetchProjects();
+  }
+
   render() {
-    const list = fetchProjects()
+    const {projects} = this.state;
 
     return (
       <div className="App">
         {Header}
-        <Table list={list}/>
+        <Table list={projects}/>
       </div>
     );
   }
