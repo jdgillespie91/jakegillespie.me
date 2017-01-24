@@ -56,7 +56,7 @@ class App extends Component {
   }
 
   fetchProjects() {
-    const iterator = fetch('http://projects.jakegillespie.me/projects');
+    const iterator = fetch('https://projects.jakegillespie.me/projects');
     iterator.then(response => response.json()).then(data => this.setProjects(data));
   }
 
