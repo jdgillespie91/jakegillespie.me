@@ -13,6 +13,7 @@ function dev {
 
 function prod {
     # TODO I need to determine a sensible deployment pattern for react apps.
+    npm install
     npm run build
     npm install -g pushstate-server
     pushstate-server build
